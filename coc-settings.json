@@ -1,0 +1,9 @@
+{
+	"vetur.completion.autoImport":true,
+	"emmet.includeLanguages":{
+
+		"vue-html":"html",
+		"vue":"html"
+
+	}
+}

@@ -56,6 +56,8 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'peitalin/vim-jsx-typescript'
 
+"Plug 'leafoftree/vim-vue-plugin'
+
 call plug#end()
 
 
@@ -95,17 +97,14 @@ let g:indentLine_bufNameExclude = ['NERD_tree','term:.*']
 let g:python_host_prog = '/home/edilson/anaconda3/bin/python3.8'
 let g:node_host_prog = '/usr/bin/node'
 "let g:deoplete#enable_at_startup = 1
-
-"node js
-" Use tern_for_vim.
-"terminal
 let g:split_terminal_default_shell = "zsh"
+"vue
 
 "multi cursors
 let g:multi_cursor_use_default_mapping=0
 
 " neoclide
-let g:coc_global_extensions = [ 'coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-tsserver','coc-python' ]
+let g:coc_global_extensions = [ 'coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-tsserver','coc-python', 'coc-vetur', 'coc-git' ]
 
 "" Default mapping
 "let g:multi_cursor_start_word_key      = '<C-n>'
@@ -126,6 +125,11 @@ let g:incsearch#auto_nohlsearch = 1
 "	autocmd!
 "	autocmd CompleteDone * silent! pclose!
 "augroup END
+"
+"
+"
+
+
 
 map <f2> :NERDTreeToggle<CR>
 map <C-l> :tabn <CR>
