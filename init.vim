@@ -56,6 +56,8 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'peitalin/vim-jsx-typescript'
 
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 "Plug 'leafoftree/vim-vue-plugin'
 
 call plug#end()
@@ -85,7 +87,7 @@ set noshowmode
 "terminal conf
 set splitbelow
 set splitright
-
+set clipboard=unnamedplus
 set autoread
 
 
@@ -121,6 +123,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "search
 let g:incsearch#auto_nohlsearch = 1
+
 "augroup deopleteCompleteDoneAu
 "	autocmd!
 "	autocmd CompleteDone * silent! pclose!
@@ -128,8 +131,7 @@ let g:incsearch#auto_nohlsearch = 1
 "
 "
 "
-
-
+"themes
 
 map <f2> :NERDTreeToggle<CR>
 map <C-l> :tabn <CR>
@@ -145,7 +147,6 @@ map <A-r> :NERDTreeRefreshRoot <CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map! <A-CR> <Right>
-
 
 syntax enable
 colorscheme onedark "active theme
