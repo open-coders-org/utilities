@@ -77,7 +77,7 @@ set mouse=a
 set cursorline
 set colorcolumn=120
 
-"identant
+"identar
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -106,7 +106,7 @@ let g:split_terminal_default_shell = "zsh"
 let g:multi_cursor_use_default_mapping=0
 
 " neoclide
-let g:coc_global_extensions = [ 'coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-tsserver','coc-python', 'coc-vetur', 'coc-git' ]
+let g:coc_global_extensions = [ 'coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-python', 'coc-vetur', 'coc-git' ]
 
 "" Default mapping
 "let g:multi_cursor_start_word_key      = '<C-n>'
@@ -147,7 +147,10 @@ map <A-r> :NERDTreeRefreshRoot <CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map! <A-CR> <Right>
-
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug> (coc-implementation)
+nmap <silent> gr <Plug> (coc-references)
 syntax enable
 colorscheme onedark "active theme
 
