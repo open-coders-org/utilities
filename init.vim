@@ -12,7 +12,7 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'vim-airline/vim-airline-themes' " Themes
 
-Plug 'Yggdroot/indentLine' 
+Plug 'Yggdroot/indentLine'
 
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -22,7 +22,7 @@ Plug 'Shougo/neco-syntax'  " Fuen
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'wokalski/autocomplete-flow'
   " For func argument completion
@@ -32,9 +32,9 @@ Plug 'Shougo/neosnippet-snippets'
 
 Plug 'neovim/node-host' , {'do':'npm install -g neovim'}
 
-Plug 'ternjs/tern_for_vim',{'do':'npm install && npm install -g tern'}
+"Plug 'ternjs/tern_for_vim',{'do':'npm install && npm install -g tern'}
 
-Plug 'carlitux/deoplete-ternjs'
+"Plug 'carlitux/deoplete-ternjs'
 
 Plug 'vimlab/split-term.vim'
 
@@ -48,7 +48,11 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 
 Plug 'haya14busa/incsearch.vim'
 "Javascript Plugins
+Plug 'w0rp/ale'
+
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -83,30 +87,40 @@ set shiftwidth=2
 set softtabstop=2
 set shiftround
 set noshowmode
-
+set conceallevel=0
 "terminal conf
 set splitbelow
 set splitright
 set clipboard=unnamedplus
 set autoread
 
-
 let g:NERDTreeChdirMode = 1
+let g:NERDTreeShowHidden = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:indentLine_fileTypeExclude  = ['text', 'sh','help','terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree','term:.*']
 let g:python_host_prog = '/home/edilson/anaconda3/bin/python3.8'
-let g:node_host_prog = '/usr/bin/node'
+let g:node_host_prog = '/usr/local/bin/node'
 "let g:deoplete#enable_at_startup = 1
 let g:split_terminal_default_shell = "zsh"
 "vue
-
+let g:coc_node_path = '/usr/local/bin/node'
 "multi cursors
 let g:multi_cursor_use_default_mapping=0
-
 " neoclide
-let g:coc_global_extensions = [ 'coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-python', 'coc-vetur', 'coc-git' ]
+let g:ale_fixers = {
+			\ '*':['remove_trailing_lines','trim_whitespace'],
+			\ 'javascript':['eslint'],
+			\}
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+"let g:ale_fix_on_save = 1
+let g:coc_global_extensions = [ 'coc-tsserver','coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-python', 'coc-vetur', 'coc-git' ]
+let g:vim_json_syntax_conceal = 0
+let g:indentLine_setConceal = 0
+
 
 "" Default mapping
 "let g:multi_cursor_start_word_key      = '<C-n>'
@@ -137,6 +151,7 @@ map <f2> :NERDTreeToggle<CR>
 map <C-l> :tabn <CR>
 map <A-e> :q <CR>
 map <A-s> :w <CR>
+map <A-f> :ALEFix <CR>
 map <A-t> :Term <CR>
 map <A-l> <C-w><Right>
 map <A-h> <C-w><Left>
@@ -153,5 +168,3 @@ nmap <silent> gi <Plug> (coc-implementation)
 nmap <silent> gr <Plug> (coc-references)
 syntax enable
 colorscheme onedark "active theme
-
-

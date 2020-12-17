@@ -1,4 +1,5 @@
 {
+	"npm.binPath":"/usr/local/bin/npm",
 	"vetur.completion.autoImport":true,
 	"emmet.includeLanguages":{
 
