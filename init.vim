@@ -48,7 +48,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 
 Plug 'haya14busa/incsearch.vim'
 "Javascript Plugins
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -83,8 +83,8 @@ set colorcolumn=120
 
 "identar
 set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
 set shiftround
 set noshowmode
 set conceallevel=0
@@ -92,8 +92,12 @@ set conceallevel=0
 set splitbelow
 set splitright
 set clipboard=unnamedplus
+ " trigger `autoread` when files changes on disk
 set autoread
-
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" notification after file change
+autocmd FileChangedShellPost *
+			\ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 let g:NERDTreeChdirMode = 1
 let g:NERDTreeShowHidden = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -109,13 +113,13 @@ let g:coc_node_path = '/usr/local/bin/node'
 "multi cursors
 let g:multi_cursor_use_default_mapping=0
 " neoclide
-let g:ale_fixers = {
-			\ '*':['remove_trailing_lines','trim_whitespace'],
-			\ 'javascript':['eslint'],
-			\}
+let g:ale_linters = {
+	\ 'javascript': ['standard']
+	\}
+"let g:ale_fixers = { 'javascript': ['standard']}
 
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+"let g:ale_sign_error = '❌'
+"let g:ale_sign_warning = '⚠️'
 "let g:ale_fix_on_save = 1
 let g:coc_global_extensions = [ 'coc-tsserver','coc-emmet','coc-css','coc-html','coc-json','coc-prettier','coc-python', 'coc-vetur', 'coc-git' ]
 let g:vim_json_syntax_conceal = 0
