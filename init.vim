@@ -61,8 +61,11 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'mxw/vim-jsx'
+
 Plug 'pangloss/vim-javascript'
 "Plug 'leafoftree/vim-vue-plugin'
+"
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -98,6 +101,9 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 " notification after file change
 autocmd FileChangedShellPost *
 			\ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+filetype plugin on
+
 let g:NERDTreeChdirMode = 1
 let g:NERDTreeShowHidden = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -141,7 +147,39 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "search
 let g:incsearch#auto_nohlsearch = 1
+" comments
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
 
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+"
+"
+"
+""
+"
 "augroup deopleteCompleteDoneAu
 "	autocmd!
 "	autocmd CompleteDone * silent! pclose!
@@ -170,5 +208,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug> (coc-implementation)
 nmap <silent> gr <Plug> (coc-references)
+map  <A-c> 1<leader>c<space>
 syntax enable
 colorscheme onedark "active theme
