@@ -15,5 +15,6 @@
 	"javascript.suggest.paths":false,
 	"javascript.suggest.autoImports":false,
 	"javascript.suggest.enabled":false,
-	"javascript.suggestionActions.enabled":false
+	"javascript.suggestionActions.enabled":false,
+	"python.pythonPath":"/home/edilson/anaconda3/bin/python3.8"
 }

@@ -18,7 +18,7 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'Shougo/neco-syntax'  " Fuen
 
-"Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'jiangmiao/auto-pairs'
 
