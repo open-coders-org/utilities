@@ -6,16 +6,18 @@ let g:airline_powerline_fonts = 1
 let g:indentLine_fileTypeExclude  = ['text', 'sh','help','terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree','term:.*']
 let g:python3_host_prog = '/home/edilson/anaconda3/bin/python3.8'
-let g:node_host_prog = '/usr/local/bin/node'
+let g:node_host_prog = '/usr/bin/node'
 "let g:deoplete#enable_at_startup = 1
 let g:split_terminal_default_shell = "zsh"
 "vue
-let g:coc_node_path = '/usr/local/bin/node'
+let g:coc_node_path = '/usr/bin/node'
 "multi cursors
 let g:multi_cursor_use_default_mapping=0
 " neoclide
 let g:ale_linters = {
-	\ 'javascript': ['standard']
+	\ 'javascript': ['standard','prettier'],
+	\ 'html': ['prettier'],
+	\ 'css' : ['prettier']
 	\}
 let g:ale_fixers = { 'javascript': ['standard']}
 

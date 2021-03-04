@@ -10,7 +10,8 @@ set mouse=a
 
 set cursorline
 set colorcolumn=120
-
+set relativenumber
+set showcmd
 "identar
 set tabstop=2
 set softtabstop=2
