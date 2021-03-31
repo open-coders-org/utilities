@@ -167,3 +167,25 @@ let g:mkdp_page_title = '「${name}」'
 " recognized filetypes
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
+
+let g:ctrlsf_extra_backend_args = {
+	\ 'pt': '--home-ptignore'
+	\ }
+let g:ctrlsf_auto_close = {
+    \ "normal" : 0,
+    \ "compact": 0
+    \}
+let g:ctrlsf_auto_focus = {
+    \ "at": "start"
+    \ }
+" " or
+" let g:ctrlsf_auto_focus = {
+"     \ "at": "done",
+"     \ "duration_less_than": 1000
+"     \ }
+
+let g:ctrlsf_case_sensitive = 'no'
+let g:ctrlsf_context = '-B 5 -A 3'
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_extra_root_markers = ['.root']

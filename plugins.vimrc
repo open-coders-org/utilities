@@ -1,7 +1,7 @@
 " folder plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
-
+Plug 'wincent/command-t'
 Plug 'tpope/vim-surround' " Description
 
 Plug 'scrooloose/nerdtree' " Files explorer
@@ -75,5 +75,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+Plug 'dyng/ctrlsf.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 

@@ -2,7 +2,7 @@ map <f2> :NERDTreeToggle<CR>
 map <C-l> :tabn <CR>
 map <A-e> :q <CR>
 map <A-s> :w <CR>
-map <A-f> :ALEFix <CR>
+map <A-f> :Files <CR>
 map <A-t> :Term <CR>
 map <A-l> <C-w><Right>
 map <A-h> <C-w><Left>
